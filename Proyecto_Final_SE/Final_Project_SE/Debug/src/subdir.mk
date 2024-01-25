@@ -1,0 +1,38 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../src/ADC_pot.c \
+../src/I2C_master.c \
+../src/UART_config.c \
+../src/hal_entry.c \
+../src/ini_Interrupt.c 
+
+C_DEPS += \
+./src/ADC_pot.d \
+./src/I2C_master.d \
+./src/UART_config.d \
+./src/hal_entry.d \
+./src/ini_Interrupt.d 
+
+OBJS += \
+./src/ADC_pot.o \
+./src/I2C_master.o \
+./src/UART_config.o \
+./src/hal_entry.o \
+./src/ini_Interrupt.o 
+
+SREC += \
+Final_Project_SE.srec 
+
+MAP += \
+Final_Project_SE.map 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+src/%.o: ../src/%.c
+	$(file > $@.in,-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O2 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal -g -gdwarf-4 -D_RENESAS_RA_ -D_RA_CORE=CM4 -D_RA_ORDINAL=1 -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/src" -I"." -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra/fsp/inc" -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra/fsp/inc/api" -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra/fsp/inc/instances" -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra/arm/CMSIS_5/CMSIS/Core/Include" -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra_gen" -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra_cfg/fsp_cfg/bsp" -I"C:/Users/Hezitzaile/Desktop/Proyecto_Final_SE/Final_Project_SE/ra_cfg/fsp_cfg" -std=c99 -Wno-stringop-overflow -Wno-format-truncation --param=min-pagesize=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -c -o "$@" -x c "$<")
+	@echo Building file: $< && arm-none-eabi-gcc @"$@.in"
+
